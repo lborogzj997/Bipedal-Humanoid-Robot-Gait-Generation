@@ -1,46 +1,49 @@
-Bipedal Robot Gait Generation and Inverse Kinematics Simulation Script
+# Bipedal Robot Gait Generation and Inverse Kinematics Simulation Script
 
-This project contains two scripts:
+## This project contains two scripts:
 
     traj_gen.py: Generates gait motion trajectories for the bipedal feet and hip, and outputs them as CSV files.
 
     ik_traj.py: Reads foot-end and hip information from the trajectory files, solves for the robot's joint angles using inverse kinematics, and performs animation simulations.
 
-Suitable for tasks such as bipedal robot gait planning, simulation verification, and control command generation.
+## Suitable for tasks such as bipedal robot gait planning, simulation verification, and control command generation.
 
 Script Description
 1. traj_gen.py — Gait Trajectory Generation
 
-Used to generate spatial trajectories for bipedal feet, simulating leg lifting motions and hip movements, and exporting them as CSV files.
+## Used to generate spatial trajectories for bipedal feet, simulating leg lifting motions and hip movements, and exporting them as CSV files.
 Features:
 
-    Generates X/Y/Z positions and pitch orientation angles for left and right feet
+-Generates X/Y/Z positions and pitch orientation angles for left and right feet
 
-    Synchronously generates Y/Z/Roll swaying motions for the hip
+-Synchronously generates Y/Z/Roll swaying motions for the hip
 
-    Outputs trajectories to the foot_trajectory.csv file
+-Outputs trajectories to the foot_trajectory.csv file
 
-    Built-in animation visualization: foot-end trajectories in the X-Z plane
+-Built-in animation visualization: foot-end trajectories in the X-Z plane
 
-Adjustable Parameters:
+## Adjustable Parameters:
 Parameter Name	Description	Units
-dt	Command sending period	seconds
-A_x	Forward movement distance per step	meters
-A_z	Foot lifting height per step	meters
-A_Y	Inward movement distance per step (cat-walk style)	meters
-n_loops	Number of gait cycles (one cycle includes one right step and one left step)	unitless
-max_pitch_deg	Maximum ankle pitch angle when lifting the foot	degrees
-A_y_base	Amplitude of left-right hip sway	meters
-A_z_base	Amplitude of up-down hip movement	meters
-A_roll_base_deg	Left-right sway angle (roll) of the hip	degrees
-swing_ratio	Ratio of leg swing time to the total cycle time (double support for the rest)	float (0~1)
-x0_right/left	Initial X coordinate for right/left foot	meters
-y0_right/left	Initial Y coordinate for right/left foot	meters
-z0_right/left	Initial Z coordinate for right/left foot	meters
+
+    dt	            //Command sending period	seconds
+    A_x	            //Forward movement distance per step	meters
+    A_z	            //Foot lifting height per step	meters
+    A_Y	            //Inward movement distance per step (cat-walk style)	meters
+    n_loops	        //Number of gait cycles (one cycle includes one right step and one left step)	unitless
+    max_pitch_deg	//Maximum ankle pitch angle when lifting the foot	degrees
+    A_y_base	    //Amplitude of left-right hip sway	meters
+    A_z_base	    //Amplitude of up-down hip movement	meters
+    A_roll_base_deg	//Left-right sway angle (roll) of the hip	degrees
+    swing_ratio	    //Ratio of leg swing time to the total cycle time (double support for the rest)	float (0~1)
+    x0_right/left	//Initial X coordinate for right/left foot	meters
+    y0_right/left	//Initial Y coordinate for right/left foot	meters
+    z0_right/left	//Initial Z coordinate for right/left foot	meters
+    
 Output File:
 
     foot_trajectory.csv
-    Each row contains: right foot pose, left foot pose, base link pose (including roll)
+    
+Each row contains: right foot pose, left foot pose, base link pose (including roll)
 
 2. ik_traj.py — Inverse Kinematics Simulation Execution
 
@@ -63,20 +66,25 @@ Output File:
 
 Usage Instructions
 
-    Run traj_gen.py
+Run                                       
+                                   
+        traj_gen.py
+Adjust parameters; after running, the trajectory animation (X-Z plane) will be automatically generated and displayed
+Closing the graphics window indicates generation is complete.
+The trajectory file will be saved as foot_trajectory.csv
 
-        Adjust parameters; after running, the trajectory animation (X-Z plane) will be automatically generated and displayed
+Run 
 
-        Closing the graphics window indicates generation is complete
+       ik_traj.py
+Reads the trajectory from foot_trajectory.csv and executes inverse kinematics
 
-        The trajectory file will be saved as foot_trajectory.csv
 
-    Run ik_traj.py
-
-        Reads the trajectory from foot_trajectory.csv and executes inverse kinematics
-
-        Set use_gui = True to view the robot motion animation
-
-        Set it to False to speed up calculation if visualization is not needed
+    Set use_gui = True 
+to view the robot motion animation
+Set it to False to speed up calculation if visualization is not needed
 
 Example configuration (in ik_traj.py):
+
+```python
+use_gui = False
+urdf_path = "your_robot.urdf"
