@@ -68,14 +68,14 @@ Usage Instructions
 
 Run                                       
                                    
-        traj_gen.py
+    traj_gen.py
 Adjust parameters; after running, the trajectory animation (X-Z plane) will be automatically generated and displayed
 Closing the graphics window indicates generation is complete.
 The trajectory file will be saved as foot_trajectory.csv
 
 Run 
 
-       ik_traj.py
+    ik_traj.py
 Reads the trajectory from foot_trajectory.csv and executes inverse kinematics
 
 
