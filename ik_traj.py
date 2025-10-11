@@ -90,7 +90,7 @@ else:
 
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
-urdf_path = r"sz13\urdf\sz13.urdf"
+urdf_path = "sz13/urdf/sz13.urdf"
 robot_id = p.loadURDF(urdf_path, useFixedBase=False)
 
 # Get waist joint indices
@@ -235,4 +235,5 @@ for j in range(joint_data.shape[1]):
 with open('joint_positions_output_filtered.csv', 'w') as f:
     for idx, row in zip(frame_idx, joint_data):
         line = f"{int(idx)} " + ' '.join(f"{v:.6f}" for v in row)
+
         f.write(line + '\n')
