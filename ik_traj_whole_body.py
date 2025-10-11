@@ -5,7 +5,7 @@ import time
 import csv
 from scipy.spatial.transform import Rotation as R
 
-use_gui = False
+use_gui = True
 
 def solve_dual_foot_ik(robot_id, right_foot_name, left_foot_name,
                        target_pos_right, target_orn_right,
