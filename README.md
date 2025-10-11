@@ -2,7 +2,7 @@
 
 <img width="321" height="431" alt="Screenshot from 2025-10-11 11-35-58" src="https://github.com/user-attachments/assets/8795416d-ca4a-4336-95ce-4de76e1ec5cd" />
 
-This project contains two scripts:
+This project contains following scripts:
 
     traj_gen.py: Generates gait motion trajectories for the bipedal feet and hip, and outputs them as CSV files.
 
