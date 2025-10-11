@@ -6,6 +6,10 @@ This project contains two scripts:
 
     ik_traj.py: Reads foot-end and hip information from the trajectory files, solves for the robot's joint angles using inverse kinematics, and performs animation simulations.
 
+    traj_gen_whole_body.py: add arms' movements.
+
+    ik_traj_whole_body.py: add arms' movements.
+
 Suitable for tasks such as bipedal robot gait planning, simulation verification, and control command generation.
 
 ## Script Description
