@@ -1,6 +1,6 @@
 # Bipedal Robot Gait Generation and Inverse Kinematics Simulation Script
 
-<img width="641" height="861" alt="Screenshot from 2025-10-11 11-35-58" src="https://github.com/user-attachments/assets/8795416d-ca4a-4336-95ce-4de76e1ec5cd" />
+<img width="321" height="431" alt="Screenshot from 2025-10-11 11-35-58" src="https://github.com/user-attachments/assets/8795416d-ca4a-4336-95ce-4de76e1ec5cd" />
 
 This project contains two scripts:
 
