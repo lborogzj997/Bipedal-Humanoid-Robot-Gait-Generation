@@ -14,6 +14,10 @@ This project contains following scripts:
 
 Suitable for tasks such as bipedal robot gait planning, simulation verification, and control command generation.
 
+## Result in real
+
+https://github.com/user-attachments/assets/655a00f6-98a0-438c-b58f-e6a25a4032ca
+
 ## Script Description
 ### 1. traj_gen.py — Gait Trajectory Generation
 
@@ -94,3 +98,4 @@ Example configuration (in ik_traj.py):
 ```python
 use_gui = False
 urdf_path = "your_robot.urdf"
+
